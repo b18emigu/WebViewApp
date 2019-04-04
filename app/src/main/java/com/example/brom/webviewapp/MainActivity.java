@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -24,7 +25,11 @@ public class MainActivity extends AppCompatActivity {
 
         // WebView wv = (WebView) findViewById(R.id.my_webview);
         WebView wv = new WebView(this);
-        wv.setWebViewClient(new WebViewClient());
+        WebViewClient wvc = new WebViewClient();
+        wv.setWebViewClient(wvc);
+        WebSettings ws = wv.getSettings();
+        ws.setJavaScriptEnabled(true);
+
         setContentView(wv);
 
         wv.loadUrl("http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/index.html");
