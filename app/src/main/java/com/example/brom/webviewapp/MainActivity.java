@@ -15,12 +15,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         /* This code is run when the App is created. Include code that creates your WebView */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        WebView wv = (WebView) findViewById(R.id.my_webview);
+        setContentView(wv);
+
+        wv.loadUrl("http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/");
 
         // The FAB-code can be removed
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -31,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        WebView wv = (WebView) findViewById(R.id.my_webview);
 
         // 1. Create a WebView element in the layout file content_main.xml
         // -- Commit and push to your github fork
@@ -51,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         // -- Commit and push to your github fork
         // 5. Enter the url to load in our WebView
         // -- Commit and push to your github fork
-}
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
