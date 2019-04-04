@@ -23,16 +23,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // WebView wv = (WebView) findViewById(R.id.my_webview);
-        WebView wv = new WebView(this);
+        WebView wv = (WebView) findViewById(R.id.my_webview);
+        // WebView wv = new WebView(this);
         WebViewClient wvc = new WebViewClient();
         wv.setWebViewClient(wvc);
         WebSettings ws = wv.getSettings();
         ws.setJavaScriptEnabled(true);
 
-        setContentView(wv);
+        //setContentView(wv);
 
         wv.loadUrl("http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/index.html");
+
+        // Internal website = file:///android_asset/
 
         // 1. Create a WebView element in the layout file content_main.xml
         // -- Commit and push to your github fork
