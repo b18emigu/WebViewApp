@@ -32,7 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
         //setContentView(wv);
 
-        wv.loadUrl("http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/index.html");
+        // External
+        // wv.loadUrl("http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/index.html");
+        // Internal
+        wv.loadUrl("file:///android_asset/about.html");
 
         // Internal website = file:///android_asset/
 
