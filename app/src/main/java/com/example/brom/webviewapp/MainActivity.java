@@ -15,6 +15,7 @@ import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
     // Create a private member variable that can hold our WebView
+    // Declaring and initalizing variables
     private WebView wv;
     private String external_url = "http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/index.html";
     private String internal_url = "file:///android_asset/about.html";
@@ -28,14 +29,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Assign value to variable - WebView object
         wv = (WebView) findViewById(R.id.my_webview);
-        // WebView wv = new WebView(this);
         WebViewClient wvc = new WebViewClient();
         wv.setWebViewClient(wvc);
         WebSettings ws = wv.getSettings();
         ws.setJavaScriptEnabled(true);
         wv.loadUrl(internal_url);
 
+        // Find button, add onClickListener, switch between external and internal on click.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,13 +52,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Alternative if not using view created from content_main.xml
+        // WebView wv = new WebView(this);
         //setContentView(wv);
-
-        // External
-        // wv.loadUrl("http://wwwlab.iit.his.se/b18emigu/Mobilapplikationsdesign/Prototyp/index.html");
-        // Internal
-        // wv.loadUrl("file:///android_asset/about.html");
-        // Internal website = file:///android_asset/
 
         // 1. Create a WebView element in the layout file content_main.xml
         // -- Commit and push to your github fork
